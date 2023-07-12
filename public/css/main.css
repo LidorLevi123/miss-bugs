@@ -1,0 +1,522 @@
+body {
+    max-width: 900px;
+    margin: auto;
+}
+
+#app {
+    position: relative;
+    background: #fae6ef;
+    margin-block-start: 20px;
+    border-radius: 5px;
+    padding-block: 20px;
+    padding-inline: 40px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+
+    padding: 0;
+
+    font-size: 1.05em;
+    font-family: cursive;
+}
+
+button:hover {
+    color: rgb(180, 180, 180);
+}
+
+header {
+    font-family: cursive;
+    font-size: 1.5em;
+    text-align: center;
+    margin-block-end: 20px;
+    color: #767676;
+}
+
+header h1 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #3a7396;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.subheader {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: 20px;
+}
+
+.main-title {
+    text-align: center;
+    color: rgba(36, 7, 7, 0.685);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bug-app .pdf-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    transition: .3s;
+}
+
+.bug-app .pdf-icon:hover {
+    opacity: 0.8;
+    scale: 1.05;
+}
+
+.user-login-container {
+    margin-block-start: 1em;
+    border: 1px solid lightgray;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+.login-signup form {
+    display: grid;
+    justify-content: center;
+    row-gap: 15px;
+}
+
+.login-signup form h2 {
+    margin: 0;
+    margin-block-end: 0.5em;
+}
+
+.bug-app .pagination {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+.bug-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0;
+}
+
+.bug-filter {
+    display: grid;
+    gap: 5px;
+    border-radius: 1em;
+}
+
+.bug-filter>*:not(legend) {
+    width: 95%;
+}
+
+.bug-sort label {
+    margin-inline-start: 0.5em;
+}
+
+.bug-none {
+    text-align: center;
+}
+
+.bug-list>*:nth-child(2) {
+    justify-self: center;
+}
+
+.bug-list>*:last-child {
+    justify-self: end;
+}
+
+.bug-preview,
+.bug-details,
+.bug-edit {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    font-size: 1.1em;
+    background-color: whitesmoke;
+    color: #8b8b8b;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+    height: fit-content;
+    border: 0.2px solid #d8d8d8;
+}
+
+.bug-preview>span:first-child {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-size: 1.1em;
+}
+
+.bug-preview h4 {
+    margin-block-start: 1.5em;
+    flex-grow: 1;
+}
+
+.bug-preview {
+    transition: scale .2s;
+}
+
+.bug-preview:hover {
+    scale: 1.03;
+}
+
+[class^="severity"] {
+    font-weight: bold;
+    margin-block: 1.5em;
+}
+
+.severity1 {
+    color: tomato;
+}
+
+.severity2 {
+    color: #b69a01;
+}
+
+.severity3 {
+    color: green;
+}
+
+.bug-preview .actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-block-end: 10px;
+}
+
+.bug-preview button {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+}
+
+.bug-edit,
+.bug-details {
+    margin: auto;
+    width: 400px;
+}
+
+.bug-edit form {
+    display: grid;
+    gap: 10px;
+    margin-block-end: 10px;
+    margin-inline: 20px;
+    text-align: start;
+}
+
+.bug-edit label {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.bug-edit .labels {
+    display: grid
+}
+
+.bug-edit .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-block-start: 20px;
+    width: 100%;
+}
+
+.bug-details .labels {
+    color: rgb(253, 4, 4);
+    font-weight: bold;
+    background-color: lightgray;
+}
+
+.user-msg {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.success {
+    background-color: lightgreen;
+}
+
+.error {
+    background-color: red;
+    color: white;
+}
+
+.cta {
+    border: none;
+    background: none;
+}
+
+.cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.hover-underline-animation {
+    position: relative;
+    color: black;
+}
+
+.hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:after:first-child {
+    transform-origin: bottom right;
+}
+
+.hover-underline-animation:after:last-child {
+    transform-origin: bottom left;
+}
+
+.cta:first-child:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom right;
+}
+
+.cta:last-child:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Switch starts here */
+.rocker {
+    display: inline-block;
+    position: relative;
+    /*
+    SIZE OF SWITCH
+    ==============
+    All sizes are in em - therefore
+    changing the font-size here
+    will change the size of the switch.
+    See .rocker-small below as example.
+    */
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #888;
+    width: 7em;
+    height: 4em;
+    overflow: hidden;
+    border-bottom: 0.5em solid #eee;
+}
+
+h4 {
+    margin: 0
+}
+
+.paging-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.rocker-small {
+    font-size: 0.75em;
+    margin: 1em;
+}
+
+.rocker::before {
+    content: "";
+    position: absolute;
+    top: 0.5em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #999;
+    border: 0.5em solid #eee;
+    border-bottom: 0;
+}
+
+.rocker input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-left,
+.switch-right {
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5em;
+    width: 3em;
+    transition: 0.2s;
+    user-select: none;
+}
+
+.switch-left {
+    height: 2.4em;
+    width: 2.75em;
+    left: 0.85em;
+    bottom: 0.4em;
+    background-color: #ddd;
+    transform: rotate(15deg) skewX(15deg);
+}
+
+.switch-right {
+    right: 0.5em;
+    bottom: 0;
+    background-color: #bd5757;
+    color: #fff;
+}
+
+.switch-left::before,
+.switch-right::before {
+    content: "";
+    position: absolute;
+    width: 0.4em;
+    height: 2.45em;
+    bottom: -0.45em;
+    background-color: #ccc;
+    transform: skewY(-65deg);
+}
+
+.switch-left::before {
+    left: -0.4em;
+}
+
+.switch-right::before {
+    right: -0.375em;
+    background-color: transparent;
+    transform: skewY(65deg);
+}
+
+input:checked+.switch-left {
+    background-color: #0084d0;
+    color: #fff;
+    bottom: 0px;
+    left: 0.5em;
+    height: 2.5em;
+    width: 3em;
+    transform: rotate(0deg) skewX(0deg);
+}
+
+input:checked+.switch-left::before {
+    background-color: transparent;
+    width: 3.0833em;
+}
+
+input:checked+.switch-left+.switch-right {
+    background-color: #ddd;
+    color: #888;
+    bottom: 0.4em;
+    right: 0.8em;
+    height: 2.4em;
+    width: 2.75em;
+    transform: rotate(-15deg) skewX(-15deg);
+}
+
+input:checked+.switch-left+.switch-right::before {
+    background-color: #ccc;
+}
+
+/* Keyboard Users */
+input:focus+.switch-left {
+    color: #333;
+}
+
+input:checked:focus+.switch-left {
+    color: #fff;
+}
+
+input:focus+.switch-left+.switch-right {
+    color: #fff;
+}
+
+input:checked:focus+.switch-left+.switch-right {
+    color: #333;
+}
+
+.btn-add {
+    appearance: button;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 19px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.btn-add:after {
+    background-clip: padding-box;
+    background-color: #1CB0F6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.btn-add:main,
+.btn-add:focus {
+    user-select: auto;
+}
+
+.btn-add:hover:not(:disabled) {
+    filter: brightness(1.1);
+}
+
+.btn-add:disabled {
+    cursor: auto;
+}
+
+.btn-add:active:after {
+    border-width: 0 0 0px;
+}
+
+.btn-add:active {
+    padding-bottom: 10px;
+}
